@@ -19,8 +19,9 @@ import android.media.AudioFormat;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,15 +29,17 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.kailashdabhi.omrecorder.AudioChunk;
+import com.kailashdabhi.omrecorder.AudioRecordConfig;
+import com.kailashdabhi.omrecorder.OmRecorder;
+import com.kailashdabhi.omrecorder.PullTransport;
+import com.kailashdabhi.omrecorder.PullableSource;
+import com.kailashdabhi.omrecorder.Recorder;
+import com.kailashdabhi.omrecorder.WriteAction;
+
 import java.io.File;
 import java.io.IOException;
-import omrecorder.AudioChunk;
-import omrecorder.AudioRecordConfig;
-import omrecorder.OmRecorder;
-import omrecorder.PullTransport;
-import omrecorder.PullableSource;
-import omrecorder.Recorder;
-import omrecorder.WriteAction;
 
 /**
  * @author Kailash Dabhi
@@ -146,15 +149,24 @@ public class WavRecorderActivity extends AppCompatActivity {
   }
 
   private PullableSource mic() {
-    return new PullableSource.Default(
-        new AudioRecordConfig.Default(
-            MediaRecorder.AudioSource.MIC, AudioFormat.ENCODING_PCM_16BIT,
-            AudioFormat.CHANNEL_IN_MONO, 44100
-        )
-    );
+      return new PullableSource.Default(
+              new AudioRecordConfig.Default(
+                      MediaRecorder.AudioSource.MIC, AudioFormat.ENCODING_PCM_FLOAT,
+                      AudioFormat.CHANNEL_IN_STEREO, 48000
+              )
+      );
   }
 
-  @NonNull private File file() {
-    return new File(Environment.getExternalStorageDirectory(), "kailashdabhi.wav");
+  private File file() {
+    File[] allExternalFilesDirs = ContextCompat.getExternalFilesDirs(this, null);
+    File dir = null;
+    if(allExternalFilesDirs.length > 0) {
+      dir = allExternalFilesDirs[allExternalFilesDirs.length - 1];
+    }
+    if (dir == null)  {
+      dir = this.getExternalFilesDir(null);
+    }
+
+    return new File(dir, "kailashdabhi.wav");
   }
 }

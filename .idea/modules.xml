@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OmRecorder.iml" filepath="$PROJECT_DIR$/OmRecorder.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/om-recorder/om-recorder.iml" filepath="$PROJECT_DIR$/om-recorder/om-recorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmRecorder-master.iml" filepath="$PROJECT_DIR$/.idea/modules/OmRecorder-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OmRecorder-master.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.iml" filepath="$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/om-recorder/OmRecorder-master.om-recorder.unitTest.iml" />
     </modules>
   </component>
 </project>
